@@ -2,8 +2,18 @@ const mongoose = require('mongoose')
 const {Schema} = mongoose
 
 const userSchema = new Schema({
-    email: {
+    username:{
         type: String,
+        required : true,
+    },
+    email:{
+        type: String,
+        required : true,
+        unique : true
+    },
+    password:{
+        type: String,
+        required : true,
     },
     role:{
         type: String,
@@ -11,7 +21,15 @@ const userSchema = new Schema({
         default:"student"
     },
     permission:{
-        type: [String],
+        type: [String]
+    },
+    otp:{
+        type: String,
+        default: ""
+    },
+    isLogin:{
+        type: Boolean,
+        default: false
     }
 })
 
