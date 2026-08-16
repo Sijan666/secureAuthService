@@ -92,7 +92,7 @@ const registrationUser = async (req, res) => {
 };
 
 // sendotp
-const loginUser = async (req, res) => {
+const sendOtp = async (req, res) => {
     try {
         let { email, password } = req.body;
 
@@ -100,7 +100,7 @@ const loginUser = async (req, res) => {
         if (!email || !password) {
             return res.status(400).json({
                 success: false,
-                message: "please provide email and password"
+                message: "please fill all the field"
             });
         }
 
@@ -114,11 +114,11 @@ const loginUser = async (req, res) => {
         }
 
         // check password
-        const isMatch = await bcrypt.compare(password, existingUser.password);
+        const isMatch = await bcrypt.compareSync(password, existingUser.password);
         if (!isMatch) {
             return res.status(400).json({
                 success: false,
-                message: "invalid credentials"
+                message: "invalid password"
             });
         }
 
@@ -151,8 +151,8 @@ const loginUser = async (req, res) => {
     }
 };
 
-// verify login
-const verifyLogin = async (req, res) => {
+// verify otp and login
+const login = async (req, res) => {
     try {
         let { email, otp } = req.body;
 
