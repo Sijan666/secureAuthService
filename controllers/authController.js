@@ -186,6 +186,7 @@ const login = async (req, res) => {
             await User.findOneAndUpdate({ email: email }, { otp: "", isLogin: true });
 
             // jwt token
+            // jwt.sign({data,secret,expire})
             let token = jwt.sign({
                 _id: existingUser.id,
                 email: existingUser.email,
