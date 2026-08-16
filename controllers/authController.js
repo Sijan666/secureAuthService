@@ -223,4 +223,4 @@ const getPrivateData = async (req, res) => {
     res.send('This is secured private data');
 };
 
-module.exports = { registrationUser, loginUser, verifyLogin, getPrivateData };
+module.exports = { registrationUser, sendOtp, login, getPrivateData };
