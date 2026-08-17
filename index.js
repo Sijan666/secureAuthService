@@ -8,7 +8,7 @@ const authRoute = require('./routes/authRoute')
 const { apiLimiter } = require("./utils/rateLimiter");
 const app = express()
 
-// database connection
+// database
 mongoDb()
 
 // middlewares
