@@ -221,6 +221,7 @@ const login = async (req, res) => {
     }
 };
 
+
 // private data
 const getPrivateData = async (req, res) => {
     res.send('This is secured private data');
