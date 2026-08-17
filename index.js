@@ -9,7 +9,7 @@ const { apiLimiter } = require("./utils/rateLimiter");
 const app = express()
 
 // database connection
-// mongoDb()
+mongoDb()
 
 // middlewares
 app.use(cors())
