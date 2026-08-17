@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { registrationUser, loginUser, verifyLogin, getPrivateData, sendOtp, login } = require('../controllers/authController')
+const { registrationUser, getPrivateData, sendOtp, login } = require('../controllers/authController')
 const checkAccess = require('../middleware/authMiddleware')
 
 // routes
