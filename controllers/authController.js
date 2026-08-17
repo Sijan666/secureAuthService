@@ -153,6 +153,7 @@ const sendOtp = async (req, res) => {
     }
 };
 
+
 // verify otp and login
 const login = async (req, res) => {
     try {
