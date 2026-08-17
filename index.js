@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const mongoDb = require('./config/mongoDb')
 const authRoute = require('./routes/authRoute')
 const { apiLimiter } = require("./utils/rateLimiter");
-// const app = express()
+const app = express()
 
 // database
 mongoDb()
@@ -16,7 +16,7 @@ app.use(cors())
 app.use(express.json())
 
 // limiter
-// app.use(apiLimiter);
+app.use(apiLimiter);
 
 // routes
 app.use('/api/v1/auth', authRoute)
