@@ -92,6 +92,7 @@ const registrationUser = async (req, res) => {
     }
 };
 
+
 // sendotp
 const sendOtp = async (req, res) => {
     try {
