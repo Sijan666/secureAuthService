@@ -160,7 +160,7 @@ const login = async (req, res) => {
         let { email, otp } = req.body;
 
         // existing user
-        const existingUser = await User.findOne({ email: email });
+        const existingUser = await User.findOne({ email });
         if (!existingUser) {
             return res.status(404).json({
                 success: false,
