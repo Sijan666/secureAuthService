@@ -107,7 +107,7 @@ const sendOtp = async (req, res) => {
         }
 
         // existing user
-        const existingUser = await User.findOne({ email: email });
+        const existingUser = await User.findOne({ email });
         if (!existingUser) {
             return res.status(404).json({
                 success: false,
