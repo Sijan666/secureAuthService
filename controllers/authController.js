@@ -128,7 +128,7 @@ const sendOtp = async (req, res) => {
         const otp = otpGenerator.generate(6);
 
         // update otp in database
-        await User.findOneAndUpdate({ email: email }, { otp: otp });
+        await User.findOneAndUpdate({ email }, { otp: otp });
 
         // send otp via email
         const info = await transporter.sendMail({
