@@ -186,7 +186,7 @@ const login = async (req, res) => {
 
         // verify otp and generate token
         if (existingUser.otp == otp) {
-            await User.findOneAndUpdate({ email: email }, { otp: "", isLogin: true });
+            await User.findOneAndUpdate({ email }, { otp: "", isLogin: true });
 
             // jwt token
             // jwt.sign({data,secret,expire})
