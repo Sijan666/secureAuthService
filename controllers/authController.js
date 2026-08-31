@@ -8,7 +8,7 @@ let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 let passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
 
-// registration
+registration
 const registrationUser = async (req, res) => {
     try {
         let { username, email, password, role = 'student' } = req.body;
